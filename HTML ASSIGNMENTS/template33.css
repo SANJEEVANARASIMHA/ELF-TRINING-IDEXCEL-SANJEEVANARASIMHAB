@@ -1,0 +1,20 @@
+p{
+    margin-left: 100px;
+}
+hr{
+    margin-left: 100px;
+}
+ol{
+    margin-left: 100px;
+}
+
+
+table,td{
+    border: 1px solid black;
+    width: 1000px;
+    border-collapse: collapse;
+}
+
+h4{
+    color: teal;
+}

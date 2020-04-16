@@ -1,0 +1,19 @@
+
+p{
+    display: inline;
+}
+table, th, td{
+    border: 1px solid black;
+    width:1000; 
+    border-collapse: collapse; 
+    table-layout: fixed;
+}
+th{
+    background-color: rgba(0, 128, 128, 0.404);
+}
+.row1{
+    background-color: rgba(0, 128, 128, 0.363);
+}
+textarea{
+
+}

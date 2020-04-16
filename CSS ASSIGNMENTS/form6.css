@@ -1,0 +1,43 @@
+div{
+    margin-left: 250px;
+    background-color: orange;
+    width: 700px;
+    text-align: center;
+    height: 25px;
+}
+
+table{
+    margin-left: 250px;
+    width: 700px;
+    border-bottom: 1px solid slategrey;
+    border-collapse: collapse;
+}
+#firstRow{
+    text-align: center;
+    height: 35px;
+    background-color: rgb(243, 195, 179);
+}
+tr{
+    text-align: right;
+}
+.td1{
+    text-align: left;
+}
+
+.LastRow td{
+    background-color: slategrey;
+    text-align: center;
+
+}
+
+td{
+    border-right: 1px solid gray;
+}
+
+tr:nth-child(odd){
+    background-color:rgb(243, 195, 179);
+    
+}
+tr:nth-child(even){
+    background-color: white;
+}

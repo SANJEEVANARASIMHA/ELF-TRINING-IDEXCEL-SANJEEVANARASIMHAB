@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(148, 228, 28);
+}
+    
+table
+{
+    margin-top: 150px;
+    margin-left: 250px;
+    width: 700px;
+    text-align: center;
+    border-top-left-radius: 5px solid  rgba(243, 243, 112, 0.911);
+    border-collapse: collapse;
+}
+#first{
+    
+    background-color: rgb(253, 253, 18);
+    height: 35px;
+    border: 1px solid  rgba(243, 243, 112, 0.911);
+    border-radius: 10px;
+}
+.row{
+    height: 50px;
+    border-bottom: 0.5px solid black;
+    background-color: white;
+}

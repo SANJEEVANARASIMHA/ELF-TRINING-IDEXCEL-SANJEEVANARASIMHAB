@@ -1,0 +1,47 @@
+body{
+    background-image: url(/Images/blue-white-black-abstract-background-260nw-645331459.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+p{
+    margin-top: 100px;
+    font-size: 30px;
+    font-family:  Verdana;
+    
+}
+form{
+    margin-left: 400px;
+}
+div{
+    margin-top: 20px;
+}
+label{
+    font-family: Tahoma, sans-serif;
+}
+input[type="text"]{
+    width: 550px;
+    height: 30px;
+    background-color:rgba(0, 0, 0, 0.521);
+    border: 0.4px solid grey;
+    border-radius: 2px;
+    padding: 10px;
+    outline: none;
+        
+}
+input[type="button"]{
+    color: wheat;
+    font-size: medium;
+    width: 550px;
+    height: 35px;
+    background-color:rgb(14, 154, 248);
+    border: 5px rgb(11, 118, 160);
+    border-radius: 2px;
+    outline: none;
+}
+::placeholder{
+    color: grey;
+    font-size: larger;
+}

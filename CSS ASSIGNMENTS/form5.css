@@ -1,0 +1,148 @@
+body{
+    background-image: url(/Images/images.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:black;
+    font-family:  Helvetica;
+
+}
+#div1{
+    height: 60px;
+    width: 543px;
+    margin-top: 100px;
+    margin-left: 350px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 3.5px;
+}
+
+form{
+    margin-left: 350px;
+    background-color: white;
+    height: 575px;
+    width: 550px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px; 
+}
+.div2{
+    margin-top: 40px;
+}
+.inputtext{
+    height: 25px;
+    width: 150px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border: 0.3px solid gray;
+    border-radius: 2px;
+    outline: none;
+    padding: 0px;
+    background-color: gainsboro;
+
+}
+.label{
+    padding: 25px;
+   
+}
+#firstlabel{
+    
+    margin-left: 125px;
+    color: grey;
+    font-size: smaller;
+}
+#secondlabel{
+   
+    margin-left: 107px;
+    color: grey;
+    font-size: smaller;
+}
+#companylabel{
+    padding: 25px;
+    margin-right: 7px;
+    font-size: smaller;
+}
+#companytext{
+    width: 340px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 3px;
+    outline: none;
+    background-color: gainsboro;
+    border: 0.3px solid gray;
+}
+#emailtext{
+    margin-left: 30px;
+    width: 340px;
+    height: 25px;
+    border-radius: 2px;
+    outline: none;
+    background-color: gainsboro;
+    border: 0.3px solid gray;
+}
+#arealabel{
+    margin-left: 125px;
+    color: grey;
+    font-size: smaller;
+}
+#phonenumberlabel{
+    margin-left: 15px;
+    color: grey;
+    font-size: smaller;
+}
+#phonetext{
+    margin-left: 30px;
+    width: 60px;
+    height: 25px;
+    border-radius: 2px;
+    outline: none;
+    background-color: gainsboro;
+    border: 0.3px solid gray;
+}
+#phonetext2{
+    margin-left: 20px;
+    width: 250px;
+    height: 25px;
+    border-radius: 2px;
+    outline: none;
+    background-color: gainsboro;
+    border: 0.3px solid gray;
+}
+#option{
+    margin-left: 20px;
+    width: 340px;
+    height: 25px;
+    background-color: gainsboro;
+    border-radius: 2px;
+    border: 0.3px solid gray;
+    font-size: smaller;
+    outline: none;
+    padding: 3px;
+    color: grey;
+}
+#registerbutton{
+    margin-left: 30px;
+    background-color: gray;
+    border: 0.3px solid gray;
+
+}
+#para{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#radiotype{
+    margin-left: 40px;
+}
+#registerbutton{
+    width: 100px;
+    height: 25px;
+    margin-top: 25px;
+    margin-left: 20px;
+    background-color:rgb(250, 10, 58);
+    border: 1px solid rgb(235, 33, 33);
+    border-radius: 2px;
+    text-align: center;
+    font-size: x-small;
+    color: white;
+}

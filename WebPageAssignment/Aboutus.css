@@ -1,0 +1,108 @@
+body{
+    color: white;
+    background-color: turquoise;
+    margin-left: 0px;
+
+}
+#firstUl{
+    list-style: none;
+    float: left;
+    background-color: rgb(13, 90, 109);
+    top: 0px;
+    margin-top: 0px;
+    width: 1200px;  
+    position: fixed;
+    height: 50px;
+  
+    
+
+}
+.firstli{
+    float: left;
+    margin-top: 15px;
+    margin-left: 50px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+#div1{
+    margin-top: 50px;
+    height: 110px;
+    width: 1250px;
+    background-color: purple;
+}
+.para1{
+    font-size: 20px;
+    display: inline;
+    margin-left: 250px;
+    
+}
+.para2{
+    font-size: 20px;
+    display: inline;
+    margin-left: 577px;
+    
+}
+.div2{
+    height: 250px;
+    width: 1000px;
+    background-color: cornflowerblue;
+    margin-top: 20px;
+    margin-left: 75px;
+    padding: 20px;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+}
+
+img{
+    float: left;
+    width: 100px;
+    height: 98px;
+    margin-left: 45px;
+    border: 1px solid purple;
+    border-radius:50%;
+}
+h2{
+    display: inline;
+    margin-left: 10px;
+}
+h3{
+    display: inline;
+    margin-left: 10px;
+}
+h4{
+    display: inline;
+    margin-left: 10px;
+}
+h5{
+    display: inline;
+    margin-left: 10px;
+}
+h6{
+    display: inline;
+    margin-left: 10px;
+}
+.header2{
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: grey;
+    height:30px;
+}
+
+.secondul {
+    font-size: 10px;
+}
+#div3{
+    height: 1100px;
+    width: 1000px;
+    background-color: cornflowerblue;
+    margin-top: 20px;
+    margin-left: 75px;
+    padding: 20px;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+}

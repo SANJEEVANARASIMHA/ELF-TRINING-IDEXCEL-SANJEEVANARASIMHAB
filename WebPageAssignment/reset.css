@@ -1,0 +1,97 @@
+body{
+    background-image: url(/Images/sunset-5004905_1280.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul{
+    list-style-type: none;
+    height: 50px;
+    width: 1200px;
+    background-color: gray;
+    top: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    left: 0px;
+    position: fixed;
+    overflow: hidden;
+    float: left;
+    
+}
+li{
+    float: left;
+    height: 50px;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+input[type="search"]{
+    float: left;
+    width: 300px;
+}
+img{
+    width:15px;
+    height: 17px;
+}
+
+#firstdiv{
+    margin-top: 25px;
+    margin-left: 250px;
+    width: 600px;
+    height: 300px;
+    background-color: darkgray;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+h1{
+    margin-top: 75px;
+    text-align: center;
+    color:white;
+}
+h2{
+    margin-top: 20px;
+    text-align: center;
+    color: blue;
+}
+
+#text1{
+    margin-left: 56px;
+    margin-top: 20px;
+    width:250px;
+    
+}
+#text2{
+    margin-left: 53px;
+    width:250px;
+    margin-top: 30px;
+}
+#text3{
+    margin-left: 33px;
+    width:250px;
+    margin-top: 30px;
+}
+input[type="text"]{
+    outline: none;
+}
+#reset{
+    margin-top: 25px;
+    margin-left: 250px;
+    width: 100px;
+}
+label{
+    margin-left:100px;
+}
+
+.angle{
+    margin-left:25px;
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color: blue ;
+    font: bold;
+    text-decoration: none;
+}
+input[type="search"]{
+    outline: none;
+}

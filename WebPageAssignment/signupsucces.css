@@ -1,0 +1,50 @@
+body{
+    background-image: url(/Images/sunset-5004905_1280.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+
+ul{
+    list-style-type: none;
+    background-color: grey;
+    height: 50px;
+    color:black;
+    margin-top: 0px;
+    opacity: 0.8;
+    text-decoration: none;
+   position: fixed;
+   overflow: hidden;
+    top: 0px;
+    width: 1200px;
+    float: left;
+    font-size: 17px;
+}
+li{
+    float: left;
+    height: 50px;
+    margin-top: 15px;
+    
+  
+}
+.angle{
+    margin-left: 50px;
+    color:black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: blue;
+}
+div{
+    margin-left: 100px;
+    margin-top: 150px;
+}
+input{
+    margin-top: 50px;
+    margin-left: 350px;
+    width: 100px;
+    height: 35px;
+
+}

@@ -1,0 +1,114 @@
+body{
+    
+    background-image: url(/Images/sunset-5004905_1280.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+ul{
+    list-style-type: none;
+    height: 50px;
+    width: 1200px;
+    background-color: gray;
+    top: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    left: 0px;
+    position: fixed;
+    overflow: hidden;
+    float: left;
+    opacity: 1;
+    
+}
+li{
+    float: left;
+    height: 50px;
+    margin-top: 15px;
+    margin-right: 65px;
+}
+a{
+    text-decoration: none;
+    color:  black;
+}
+img{
+    width:15px;
+    height: 17px;
+}
+#search{
+    outline: none;
+    width: 300px;
+}
+
+h3{
+    font-family: sans-serif;
+    color:rgb(13, 91, 155);
+    margin-top: 10px;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+div{
+    margin-top: 100px;
+    width: 500px;
+    height: 525px;
+    background-color: darkgrey;
+    margin-left: 350px;
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+}
+label{
+    margin-left: 50px;
+}
+
+#first, #second{
+    width: 250px;
+    margin-left: 85px;
+    margin-top: 30px;
+    outline: none;
+}
+#third{
+    width:250px;
+    margin-left:48px;
+    margin-top: 30px;
+    outline: none;
+}
+#fourth{
+    width:250px;
+    margin-left:50px;
+    margin-top: 30px;
+    outline: none;
+}
+#fifth{
+    width:250px;
+    margin-left:100px;
+    margin-top: 30px;
+    outline: none;
+}
+#sixth{
+    width:250px;
+    margin-left:35px;
+    margin-top: 30px;
+    outline: none;
+}
+
+input[type="button"]{
+    margin-left: 180px;
+    margin-top: 50px;
+    width: 150px;
+    height: 30px;
+    border : 1px solid gainsboro;
+    border-radius: 5px;
+    outline: none;
+}
+::placeholder{
+    padding: 5px;
+}
+input[type="button"]:hover{
+    color: white;
+    background-color: powderblue;
+    border: 1px solid powderblue;
+    outline: none;
+   
+}

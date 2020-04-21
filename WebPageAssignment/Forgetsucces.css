@@ -1,0 +1,70 @@
+body{
+    background-image: url(/Images/sunset-5004905_1280.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+ul{
+    list-style-type: none;
+    height: 50px;
+    width: 1200px;
+    background-color: gray;
+    top: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    left: 0px;
+    position: fixed;
+    overflow: hidden;
+    float: left;
+    
+}
+li{
+    float: left;
+    height: 50px;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+input[type="search"]{
+    float: left;
+    width: 300px;
+}
+img{
+    width:15px;
+    height: 17px;
+}
+
+#firstdiv{
+    margin-top: 100px;
+    margin-left: 250px;
+    width: 600px;
+    height: 100px;
+    background-color: darkgray;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+}
+h2{
+    margin-top: 20px;
+    text-align: center;
+    color: blue;
+}
+
+
+.angle{
+    margin-left:25px;
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color: blue ;
+    font: bold;
+    text-decoration: none;
+}
+#reset{
+    margin-top: 5px;
+    margin-left: 275px;
+    width: 100px;
+    height: 20px;
+}

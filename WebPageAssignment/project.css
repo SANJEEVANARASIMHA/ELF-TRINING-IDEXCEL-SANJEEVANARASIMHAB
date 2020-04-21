@@ -1,0 +1,112 @@
+body{
+    color: white;
+    background-color: turquoise;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+Ul{
+    list-style: none;
+    float: left;
+    background-color: rgb(13, 90, 109);
+    top: 0px;
+    margin-top: 0px;
+    width: 1200px;  
+    position: fixed;
+    height: 50px;
+
+}
+li{
+    float: left;
+    margin-top: 15px;
+    margin-left: 50px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+#firstdiv{
+    margin-top: 50px;
+    text-align: center;
+    background-color: darkmagenta;
+    font-size: 25px;
+  
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+th{
+    background-color: teal;
+    color: black;
+}
+
+table{
+    height: 200px;
+    width: 700px;
+    margin-left: 250px;
+    text-align: center;
+}
+h2{
+    text-align: center;
+    background-color: ;
+}
+
+#table2{
+    height: 100px;
+}
+
+.header2{
+    text-align: center;
+    background-color: violet;
+}
+
+.paradiv{
+    margin-left: 175px;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 15px;
+    height:200px;
+    width: 900px;
+    margin-top: 15px;
+}
+
+.whatIOt{
+    margin-left: 150px;
+    margin-top: 50px;
+    height: 60px;
+    width: 400px;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+}
+.paradiv2{
+    margin-left: 175px;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 15px;
+    height:300px;
+    width: 900px;
+    margin-top: 15px;
+
+}
+.paradiv3{
+    margin-left: 175px;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 15px;
+    height:420px;
+    width: 900px;
+    margin-top: 15px;
+
+}

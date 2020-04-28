@@ -1,0 +1,38 @@
+li {
+    margin-left: 50px;
+}
+
+h1 ,h5{
+    text-align: center;
+    margin-top: 20px;
+}
+.div1{
+    background-color: grey;
+    opacity: 0.8;
+    height: 400px;
+    width: 400px;
+}
+
+<form action="" method="POST" role="form">
+<legend>Login Here..</legend>
+
+<div class="form-group">
+    <label class="d-inlineblock"for="">FirstName</label>
+    <input type="text" class="form-control" id="" placeholder="Enter FirstName">
+</div>
+<div class="form-group">
+    <label for="">LastName</label>
+    <input type="text" class="form-control" id="" placeholder="Enter LastName">
+</div>
+<div class="form-group">
+    <label for="">Email</label>
+    <input type="email" class="form-control" id="" placeholder="Enter email">
+</div>
+<div class="form-group">
+    <label for="">Phone Number</label>
+    <input type="tel" class="form-control" id="" placeholder="Enter phone Number">
+</div>
+<a href="signupsuc.html"><button type="button" class="btn btn-primary">Submit</button></a>
+<br>
+
+</form>

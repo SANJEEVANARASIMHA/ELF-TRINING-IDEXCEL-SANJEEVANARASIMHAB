@@ -1,0 +1,303 @@
+\lpostgres=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+(3 rows)
+
+
+postgres=# create database testdb;
+CREATE DATABASE
+postgres=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ testdb    | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(4 rows)
+
+
+postgres=# \c testdb
+You are now connected to database "testdb" as user "postgres".
+testdb=#
+
+
+
+testdb=# \d
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+----------
+ public | person | table | postgres
+(1 row)
+
+
+
+
+idexcel_db=# select * from emp;
+ empid |       ename        |    desgination     |  hiredate  | salary | age |         emailid          | deptno |  mobileno
+-------+--------------------+--------------------+------------+--------+-----+--------------------------+--------+------------
+     1 | sanjeeva narasimha | software engineer  | 2020-03-11 |  20000 |  23 | sanjubodagalla@gmail.com |     10 | 8186069762
+     2 | keerthi sharan     | software developer | 0209-05-05 |  50000 |  26 | keerthi@gmail.com        |     20 | 9491186835
+     3 | robin son          | software tester    | 2018-02-05 |  35000 |  25 | robin@gmail.com          |     30 | 8096468927
+     4 | jagadeesh          | HR                 | 2017-03-05 |  40000 |  27 | jagga@gmail.com          |     20 | 6300036624
+     5 | pavan kumar        | salesman           | 2018-07-05 |  35000 |  24 | pavan@gmail.com          |     10 | 7036677208
+     6 | pavanmba           | clerk              | 2016-02-05 |  10000 |  28 | pavanmba@gmail.com       |     20 | 7675899187
+     7 | muni raja          | software engineer  | 2017-04-05 |  36000 |  26 | muni@gmail.com           |     20 | 6302194068
+     8 | Dhanush            | sales man          | 2016-06-05 |  40000 |  28 | dhanu@gmail.com          |     10 | 8919287951
+     9 | Nag                | Hr                 | 2015-02-05 |  45000 |  26 | nag@gmail.com            |     20 | 8886148881
+    10 | rudhra             | clerk              | 2019-07-05 |  32000 |  20 | rudhra@gmail.com         |     30 | 9398516800
+(10 rows)
+
+
+idexcel_db=#  select ename from emp;
+       ename
+--------------------
+ sanjeeva narasimha
+ keerthi sharan
+ robin son
+ jagadeesh
+ pavan kumar
+ pavanmba
+ muni raja
+ Dhanush
+ Nag
+ rudhra
+(10 rows)
+
+
+idexcel_db=# select ename,salary from emp;
+       ename        | salary
+--------------------+--------
+ sanjeeva narasimha |  20000
+ keerthi sharan     |  50000
+ robin son          |  35000
+ jagadeesh          |  40000
+ pavan kumar        |  35000
+ pavanmba           |  10000
+ muni raja          |  36000
+ Dhanush            |  40000
+ Nag                |  45000
+ rudhra             |  32000
+(10 rows)
+
+
+idexcel_db=# update emp set salary=25000;
+UPDATE 10
+idexcel_db=# select * from emp;
+ empid |       ename        |    desgination     |  hiredate  | salary | age |         emailid          | deptno |  mobileno
+-------+--------------------+--------------------+------------+--------+-----+--------------------------+--------+------------
+     1 | sanjeeva narasimha | software engineer  | 2020-03-11 |  25000 |  23 | sanjubodagalla@gmail.com |     10 | 8186069762
+     2 | keerthi sharan     | software developer | 0209-05-05 |  25000 |  26 | keerthi@gmail.com        |     20 | 9491186835
+     3 | robin son          | software tester    | 2018-02-05 |  25000 |  25 | robin@gmail.com          |     30 | 8096468927
+     4 | jagadeesh          | HR                 | 2017-03-05 |  25000 |  27 | jagga@gmail.com          |     20 | 6300036624
+     5 | pavan kumar        | salesman           | 2018-07-05 |  25000 |  24 | pavan@gmail.com          |     10 | 7036677208
+     6 | pavanmba           | clerk              | 2016-02-05 |  25000 |  28 | pavanmba@gmail.com       |     20 | 7675899187
+     7 | muni raja          | software engineer  | 2017-04-05 |  25000 |  26 | muni@gmail.com           |     20 | 6302194068
+     8 | Dhanush            | sales man          | 2016-06-05 |  25000 |  28 | dhanu@gmail.com          |     10 | 8919287951
+     9 | Nag                | Hr                 | 2015-02-05 |  25000 |  26 | nag@gmail.com            |     20 | 8886148881
+    10 | rudhra             | clerk              | 2019-07-05 |  25000 |  20 | rudhra@gmail.com         |     30 | 9398516800
+(10 rows)
+
+
+idexcel_db=# update emp set salary=30000 where empid=3;
+UPDATE 1
+
+
+idexcel_db=# select * from emp;
+ empid |       ename        |    desgination     |  hiredate  | salary | age |         emailid          | deptno |  mobileno
+-------+--------------------+--------------------+------------+--------+-----+--------------------------+--------+------------
+     1 | sanjeeva narasimha | software engineer  | 2020-03-11 |  25000 |  23 | sanjubodagalla@gmail.com |     10 | 8186069762
+     2 | keerthi sharan     | software developer | 0209-05-05 |  25000 |  26 | keerthi@gmail.com        |     20 | 9491186835
+     4 | jagadeesh          | HR                 | 2017-03-05 |  25000 |  27 | jagga@gmail.com          |     20 | 6300036624
+     5 | pavan kumar        | salesman           | 2018-07-05 |  25000 |  24 | pavan@gmail.com          |     10 | 7036677208
+     6 | pavanmba           | clerk              | 2016-02-05 |  25000 |  28 | pavanmba@gmail.com       |     20 | 7675899187
+     7 | muni raja          | software engineer  | 2017-04-05 |  25000 |  26 | muni@gmail.com           |     20 | 6302194068
+     8 | Dhanush            | sales man          | 2016-06-05 |  25000 |  28 | dhanu@gmail.com          |     10 | 8919287951
+     9 | Nag                | Hr                 | 2015-02-05 |  25000 |  26 | nag@gmail.com            |     20 | 8886148881
+    10 | rudhra             | clerk              | 2019-07-05 |  25000 |  20 | rudhra@gmail.com         |     30 | 9398516800
+     3 | robin son          | software tester    | 2018-02-05 |  30000 |  25 | robin@gmail.com          |     30 | 8096468927
+(10 rows)
+
+
+testdb=# \d person
+                      Table "public.person"
+ Column |          Type          | Collation | Nullable | Default
+--------+------------------------+-----------+----------+---------
+ id     | integer                |           |          |
+ name   | character varying(150) |           |          |
+ email  | character varying(200) |           |          |
+
+
+testdb=# alter table person add column age int;
+ALTER TABLE
+testdb=# \d person
+                      Table "public.person"
+ Column |          Type          | Collation | Nullable | Default
+--------+------------------------+-----------+----------+---------
+ id     | integer                |           |          |
+ name   | character varying(150) |           |          |
+ email  | character varying(200) |           |          |
+ age    | integer                |           |          |
+
+
+testdb=# alter table person drop column age;
+ALTER TABLE
+testdb=# \d person
+                      Table "public.person"
+ Column |          Type          | Collation | Nullable | Default
+--------+------------------------+-----------+----------+---------
+ id     | integer                |           |          |
+ name   | character varying(150) |           |          |
+ email  | character varying(200) |           |          |
+
+
+testdb=# alter table person rename column name to pname;
+ALTER TABLE
+testdb=# \d person
+                      Table "public.person"
+ Column |          Type          | Collation | Nullable | Default
+--------+------------------------+-----------+----------+---------
+ id     | integer                |           |          |
+ pname  | character varying(150) |           |          |
+ email  | character varying(200) |           |          |
+
+
+
+
+
+
+postgres=# \l
+                                         List of databases
+    Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+------------+----------+----------+--------------------+--------------------+-----------------------
+ idexcel_db | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres   | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0  | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+            |          |          |                    |                    | postgres=CTc/postgres
+ template1  | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+            |          |          |                    |                    | postgres=CTc/postgres
+ testdb     | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(5 rows)
+
+
+postgres=# \c idexcel_db
+You are now connected to database "idexcel_db" as user "postgres".
+idexcel_db=# \d
+        List of relations
+ Schema | Name | Type  |  Owner
+--------+------+-------+----------
+ public | emp  | table | postgres
+(1 row)
+
+
+idexcel_db=# \d emp
+                        Table "public.emp"
+   Column    |       Type        | Collation | Nullable | Default
+-------------+-------------------+-----------+----------+---------
+ empid       | integer           |           | not null |
+ ename       | character varying |           |          |
+ desgination | character varying |           |          |
+ hiredate    | date              |           | not null |
+ salary      | integer           |           |          |
+ age         | integer           |           |          |
+ emailid     | character varying |           |          |
+ deptno      | integer           |           |          |
+ mobileno    | bigint            |           | not null |
+Indexes:
+    "emp_pkey" PRIMARY KEY, btree (empid)
+
+
+idexcel_db=# select * from emp;
+ empid |       ename        |    desgination     |  hiredate  | salary | age |         emailid          | deptno |  mobileno
+-------+--------------------+--------------------+------------+--------+-----+--------------------------+--------+------------
+     1 | sanjeeva narasimha | software engineer  | 2020-03-11 |  20000 |  23 | sanjubodagalla@gmail.com |     10 | 8186069762
+     2 | keerthi sharan     | software developer | 0209-05-05 |  50000 |  26 | keerthi@gmail.com        |     20 | 9491186835
+     3 | robin son          | software tester    | 2018-02-05 |  35000 |  25 | robin@gmail.com          |     30 | 8096468927
+     4 | jagadeesh          | HR                 | 2017-03-05 |  40000 |  27 | jagga@gmail.com          |     20 | 6300036624
+     5 | pavan kumar        | salesman           | 2018-07-05 |  35000 |  24 | pavan@gmail.com          |     10 | 7036677208
+     6 | pavanmba           | clerk              | 2016-02-05 |  10000 |  28 | pavanmba@gmail.com       |     20 | 7675899187
+     7 | muni raja          | software engineer  | 2017-04-05 |  36000 |  26 | muni@gmail.com           |     20 | 6302194068
+     8 | Dhanush            | sales man          | 2016-06-05 |  40000 |  28 | dhanu@gmail.com          |     10 | 8919287951
+     9 | Nag                | Hr                 | 2015-02-05 |  45000 |  26 | nag@gmail.com            |     20 | 8886148881
+    10 | rudhra             | clerk              | 2019-07-05 |  32000 |  20 | rudhra@gmail.com         |     30 | 9398516800
+(10 rows)
+
+
+idexcel_db=#  select ename from emp;
+       ename
+--------------------
+ sanjeeva narasimha
+ keerthi sharan
+ robin son
+ jagadeesh
+ pavan kumar
+ pavanmba
+ muni raja
+ Dhanush
+ Nag
+ rudhra
+(10 rows)
+
+
+idexcel_db=# select ename,salary from emp;
+       ename        | salary
+--------------------+--------
+ sanjeeva narasimha |  20000
+ keerthi sharan     |  50000
+ robin son          |  35000
+ jagadeesh          |  40000
+ pavan kumar        |  35000
+ pavanmba           |  10000
+ muni raja          |  36000
+ Dhanush            |  40000
+ Nag                |  45000
+ rudhra             |  32000
+(10 rows)
+
+
+idexcel_db=# update emp set salary=25000;
+UPDATE 10
+idexcel_db=# select * from emp;
+ empid |       ename        |    desgination     |  hiredate  | salary | age |         emailid          | deptno |  mobileno
+-------+--------------------+--------------------+------------+--------+-----+--------------------------+--------+------------
+     1 | sanjeeva narasimha | software engineer  | 2020-03-11 |  25000 |  23 | sanjubodagalla@gmail.com |     10 | 8186069762
+     2 | keerthi sharan     | software developer | 0209-05-05 |  25000 |  26 | keerthi@gmail.com        |     20 | 9491186835
+     3 | robin son          | software tester    | 2018-02-05 |  25000 |  25 | robin@gmail.com          |     30 | 8096468927
+     4 | jagadeesh          | HR                 | 2017-03-05 |  25000 |  27 | jagga@gmail.com          |     20 | 6300036624
+     5 | pavan kumar        | salesman           | 2018-07-05 |  25000 |  24 | pavan@gmail.com          |     10 | 7036677208
+     6 | pavanmba           | clerk              | 2016-02-05 |  25000 |  28 | pavanmba@gmail.com       |     20 | 7675899187
+     7 | muni raja          | software engineer  | 2017-04-05 |  25000 |  26 | muni@gmail.com           |     20 | 6302194068
+     8 | Dhanush            | sales man          | 2016-06-05 |  25000 |  28 | dhanu@gmail.com          |     10 | 8919287951
+     9 | Nag                | Hr                 | 2015-02-05 |  25000 |  26 | nag@gmail.com            |     20 | 8886148881
+    10 | rudhra             | clerk              | 2019-07-05 |  25000 |  20 | rudhra@gmail.com         |     30 | 9398516800
+(10 rows)
+
+
+idexcel_db=# update emp set salary=30000 where empid=3;
+UPDATE 1
+
+
+idexcel_db=# select * from emp;
+ empid |       ename        |    desgination     |  hiredate  | salary | age |         emailid          | deptno |  mobileno
+-------+--------------------+--------------------+------------+--------+-----+--------------------------+--------+------------
+     1 | sanjeeva narasimha | software engineer  | 2020-03-11 |  25000 |  23 | sanjubodagalla@gmail.com |     10 | 8186069762
+     2 | keerthi sharan     | software developer | 0209-05-05 |  25000 |  26 | keerthi@gmail.com        |     20 | 9491186835
+     4 | jagadeesh          | HR                 | 2017-03-05 |  25000 |  27 | jagga@gmail.com          |     20 | 6300036624
+     5 | pavan kumar        | salesman           | 2018-07-05 |  25000 |  24 | pavan@gmail.com          |     10 | 7036677208
+     6 | pavanmba           | clerk              | 2016-02-05 |  25000 |  28 | pavanmba@gmail.com       |     20 | 7675899187
+     7 | muni raja          | software engineer  | 2017-04-05 |  25000 |  26 | muni@gmail.com           |     20 | 6302194068
+     8 | Dhanush            | sales man          | 2016-06-05 |  25000 |  28 | dhanu@gmail.com          |     10 | 8919287951
+     9 | Nag                | Hr                 | 2015-02-05 |  25000 |  26 | nag@gmail.com            |     20 | 8886148881
+    10 | rudhra             | clerk              | 2019-07-05 |  25000 |  20 | rudhra@gmail.com         |     30 | 9398516800
+     3 | robin son          | software tester    | 2018-02-05 |  30000 |  25 | robin@gmail.com          |     30 | 8096468927
+(10 rows)
+
+

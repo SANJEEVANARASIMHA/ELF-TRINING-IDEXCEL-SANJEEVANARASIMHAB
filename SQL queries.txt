@@ -163,3 +163,22 @@ syntax;- select Column_name AS alias_name from table_name;
 =======================================================================
 
 
+1)waq to obtain emplyoee name with his cuurent salary and new salary with hike of 500 for all employ.
+	
+	Query;-	select ename, salary+500  current_salary, salary*12+500  anual_salary from emp;
+
+2) waq to dispaly all the record of the employe with increamented 500 rupees for each employe.
+
+	Query:-select ename, salary+500 incremented_salary from emp;
+
+
+3)waq to display all the records of the employee with decrements of 500 rupees for each employee
+
+	Query:-select ename, salary-500 decremented_salary from emp;
+
+4) waq to display name and salary and anulal salary of all the employee
+
+	Query:- select ename, salary, salary*12 anual_salary from emp;
+
+5)waq to display per day salary of all the employe.
+	Query:-select ename,salary, salary/30 per_day_salary from emp;

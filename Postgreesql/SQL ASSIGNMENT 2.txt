@@ -1,0 +1,113 @@
+
+										ASSIGNment-2
+										-------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+1. List employees whose name having 4 characters
+Query)select * from emp where length(ename)=4;
+
+
+
+2.List employees whose job is having 7 characters
+Query)select * from emp where length(desigination)=7;
+
+
+
+
+3.Find out how many times letter 'S' occurs in 'qspiders'.
+Query) select length('qspiders')-length(replace('qspiders','s','')) as "number of s";
+
+
+
+
+4.List the employees whose job is having last 3 characters as 'man'
+Query)select * from emp where right(desgination,3)='man';
+
+
+
+
+5.List employees whose job is having first 3 characters as 'man'
+Query)select * from emp where left(desgination,3)='man';
+
+
+
+6. Display all the names whose name is having exactly 1 'L'
+Query)select * from emp where length(ename)-length(replace(ename,'l',''))=1;
+
+
+
+
+7. Display dept names which are having letter 'O'
+Query)select * from dept where position('o'in dname)!=0;
+
+
+
+
+8. Display the output as shown below,
+   Scott working as a clerk earns 3000 in dept 20
+Query)select concat(ename,concat(' working as a ',concat(' clerks earns ',salary,concat('in dept',deptno)))) from emp;
+
+
+
+
+9. Calculate number of L in string 'HELLLLL'
+Query)select length('helllll')-length(replace('helllll','l','')) as "number of l";
+
+
+
+
+10.Display all the employees whose job has a string 'MAN'
+Query)select * from emp where position('man' in desgination)!=0;
+
+
+
+11. Display all the employees whose job starts with string 'MAN'
+Query)select * from emp where right(desgination,3)='MAN';
+
+
+
+
+12. Display all the employees whose job ends with string 'MAN'
+Query)select * from emp where left(desgination,3)='MAN';
+
+
+
+
+13. Display first 3 characters of ename in lower case and rest everything in upper case.
+Query) select ename, lower(substr(ename,1,3))||upper(substr(ename,4)) from emp;
+
+
+14. Display the result from emp table as below.
+SMITH is a CLERK and gets salary 2000 
+
+Query)select ename ||'is a'|| desgination || 'and gets salary'|| salary from emp;
+				or
+Query)select concat(ename,concat(' is a ',concat(desgination),concat(' and salary',salary))) from emp;
+
+
+
+
+15.list the employees hired on a Wednesday
+Query)select * from emp where to_char(hiredate,'dy')='wed';
+
+
+
+
+16.list the employees hired on a leap year
+Query)select * from emp where (cast(to_char(hiredate,'YYYY') as integer)%4=0 and cast(to_char(hiredate,'YYYY') as integer)%100<>0) or cast(to_char(hiredate,'YYYY')as integer)%400=0;
+
+
+
+
+17.list the employees hired on a Sunday in the month of may
+Query)select ename from emp where to_char(hiredate,'mon')='may' and to_char(hiredate,'dy')='sun';
+
+		or
+Query)select * from emp where cast(hiredate as varchar) like'____-05-sunday';
+
+
+
+---------------------------------------------------------------------------------------------------------

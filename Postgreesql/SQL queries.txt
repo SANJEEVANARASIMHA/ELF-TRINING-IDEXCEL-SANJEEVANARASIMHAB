@@ -1,0 +1,625 @@
+postgres=# create database testdb;
+CREATE DATABASE
+
+
+	Basic Cammands :-
+	
+	1)	\l cammand is used to display the all database names
+		
+		syntax;- \l
+
+	2)	\c is used to connect the perticular databse 
+	
+		syntax:- \c database_name
+
+	
+	3)	\d cammand is used to list out the relations in a database
+		
+		synatx:- \d 
+
+	
+	4)	\d Table_name:- is used to display  the perticular  table structure 
+	
+		syntax:- \d Table_Name
+	
+
+=================================================================================
+
+	DDL(Data Defination Lanquage):-
+	===============================
+
+	1) create 
+	2) Alter
+	3) Drop
+	4)Rename
+	5)Truncate
+
+
+	Create:-
+	========
+
+	1) WAQ to  Create a Database
+
+	Query:- 
+	
+		Syntax:-Create database db_name;
+		Example:- Create database Idexcel;
+
+	2) WAQ to Create a Table
+	
+	Query:-
+		Syntax:-Create table table_name (Column_name1 datatypes constraints, column_name2 datatype constaints,Column_name3 datatypes constraints...........Column_nameN datatype constraints) 
+						
+		Example:- Create table employ_info(Eid int primary key,Ename varchar not null, EmailId varchar not null);
+
+	=================================================================================================
+
+	Alter:-
+	=======
+
+	1) WAQ to add a column to a perticular table
+
+		Syntax:- alter Table Table_name add Column Column_name datatype ;
+
+		Example alter person add column age int;
+
+	2) WAQ to Drop a perticular table column
+		
+		Syntax:- alter table table_name drop column column_name;
+
+		Example alter table person drop column age int;
+
+	3) WAQ to Rename a perticular table name 
+		
+		synatx:- alter table table_name rename Column_name to new_Name;
+	
+		Example:- alter table person rename column name to pname;
+
+	=============================================================================================
+
+	Rename:-
+	========
+	
+	Syntax:-  ater database database_name to new_name ;
+
+	4) WAQ to rename a databse name
+		
+	Query:- alter databse testdb rename to test;
+
+	5)WAQ to Drop a databse 
+
+	synatx:- Drop database Database_name;
+	
+	example:- drop databse test;
+	
+	6)WAQ to drop a table 
+
+	syntax:- drop Table table_name;
+	
+	example:- drop table person;
+
+
+=============================================================
+	Insert:-
+	======
+	
+	7)WAQ toi insert recod of pesron table with id name email
+
+	syntax:- insert into table_name (column_name1,column_name2,.........columnN) values(value1,value2,value3...........valueN);
+
+	Example:- insert into person(id,name,email) values(1,'sanjeev','sanjeev@gmail.com');
+	
+	
+	Update:-
+	========
+
+	8) WAQ to update a slary 25000;
+	Syntax:-update table_name set column_name=value;
+
+	example:-update emp set salary=25000;
+	
+
+	delete:-
+	=======
+
+	9) WAQ to delete a table 
+	
+	Syntax:- delete from table_name;
+	
+	Example:- delete from person;
+
+=============================================
+
+	
+	Where Clause;-
+	
+	Syntax:- select * from table_name where Condition;
+	
+	10) WAQ to update a salary 30000 of a employe where employe id =103;
+	
+	Update employe set sal=30000 where eid=103;
+	
+	11) WAQ to delete a record where employe iod=104;
+
+	delete from emp where eid=104; 
+
+
+=================================================================	
+
+	Alias;- is a temperory name for column
+
+	syntax;- select Column_name AS alias_name from table_name;
+
+	select Column_name  alias_name from table_name;
+
+	ex:-select designation as job_type  from emp;
+
+	12) waq to disply alias name as job_type for designation.
+
+	ex:-select designation as job_type  from emp;
+
+	select designation  job_type  from emp;
+
+=======================================================================
+
+
+	13)waq to obtain emplyoee name with his cuurent salary and new salary with hike of 500 for all employ.
+	
+	Query;-	select ename, salary+500  current_salary, salary*12+500  anual_salary from emp;
+
+	14) waq to dispaly all the record of the employe with increamented 500 rupees for each employe.
+
+	Query:-select ename, salary+500 incremented_salary from emp;
+
+
+	15)waq to display all the records of the employee with decrements of 500 rupees for each employee
+
+	Query:-select ename, salary-500 decremented_salary from emp;
+
+	16) waq to display name and salary and anulal salary of all the employee
+
+	Query:- select ename, salary, salary*12 anual_salary from emp;
+
+	17)waq to display per day salary of all the employe.
+	Query:-select ename,salary, salary/30 per_day_salary from emp;
+
+
+
+
+=====================================================================================
+06-05-2020
+
+DISTINCT:-
+	is used to elemenate the duplicate , IS USED TO IDENTITY THE UNIQUE RECORD
+	
+	the select statement is used return a different value(unique value)	
+	
+	
+
+	syntax:- SELECET DISTINCT COLUMN_NAME FROM TABLE_NAME;
+	EXAMPLE ;-select distinct name from emp
+
+	select distinct ename deptno from emp;
+
+	
+	Question 18)WAq to display two columns of distinct values fo ename deptno.
+	Query:-select distinct  ename,deptno from emp;
+
+
+Comparison Operators:-	(=,<,> ,<=, >=, !=, <>)
+=========================
+ 	WAQ to display the record of employe
+
+	question 19) WAQ to display the all the employee records in perticular deptno 
+	Query:-select * from emp where deptno=10;
+
+	question 20) WAQ to display all the employe records in deptno 20
+	Query:-select * from emp where deptno=20;
+
+	question 21)WAQ to display all the records of an employe whose salary is greter than 1000;
+	Query:-select * from emp where sal>10000;
+
+	question 22) WAQ to display all the records of an employee whose salary is greater than and eqauls to 25000
+	Query:-select * from ep where sal>=25000;
+
+	qestion 23) WAQ to display all the records of an employe whose salary is less than 25000
+	Query:-select * from ep where sal<25000;
+
+	question 24) WAQ to display all the records of an employe whose salary is less than and equal to 25000;
+	Query:-select * from ep where sal<=25000;
+
+	Question 25) WAQ to dsiplay all the records of an employe whose salary is not equal o 25000	
+	Query ;-select * from emp where salary<>25000;
+
+==============================================================================================================================
+07-05-2020
+
+	LoGical Operators:-
+			
+		truth table 
+
+		Inputs		Outputs
+
+		X	Y	Z
+		0	0	0
+		0	1	0
+		1	0	0
+		1	1	1
+
+
+	AND:-
+	--------
+	
+	Syntax: SELECT * FROM TABLE_NAME WHERE CONDITION1 AND CONDITION2;
+	
+	
+	questiion 26) WAQ to diaply all empoyee records who is working as hr and in deptno 20.
+	Qyery) select * from emp where desgination='hr' and deptno=20;
+
+
+	questin 27) WAQ to display all the empoyee records whos is working as a clerk and deptno in 20.
+	Query)select * from emp where desgination ='clerk' and deptno=20;
+
+	question 28) WAQ to display all the records employee who is working as salesman hired after 2016.
+	Query)select * from emp where desgination='salesman' and hiredate>2016-01-01;
+
+
+	question 29)WAQ to display who is working as a hr in deptno 20 only if salary is greater than 25000.
+	Query)select * from emp where desgination='hr' and deptno=20 and salary >25000;
+	
+
+
+===============================================
+
+	OR:-
+	--------------
+
+
+	TRuth Table;-
+	Inputs 		outputs
+	x 	y	z
+	0	0	0
+	0	1	1
+	1	0	1
+	1	1	1
+
+
+	Syntax:- SELECET * FROM EMP WHERE CONDITION1 OR CONDITION2;
+	
+	question 30)WAQ to display all the records of an employee who is in deptno 10 or in 20 
+	Query)select * from emp where depetno=10 or deptno=20;
+
+	question 31)WAQ to display name salary deptno who is working as tester or who is salary is equals to 50000;
+	Query)select ename,deptno,salary from emp where desgination='tester' or salary=50000; 
+
+
+	question 32)WAQ to display name of all the employees working as teseter as well as working in deptno 30  or working as a clerk whos salary is greter than >= 150000.
+	Query)select ename from emp where desgination='tester' and deptno=30 or desgination='clerk' and salary>=150000;
+	
+
+
+		
+=======================================
+
+	Not:-
+	-----
+		TRUTH TABLE:-
+	
+		input	output
+		0	1
+		1	0
+	
+	Syntax:- SELECT * FROM EMP WHERE NOT CONDITIONS
+
+
+
+=====================================================================
+08-05-2020
+
+order of execution for logiical operators 
+	1)NOT
+	2)AND
+	3)OR
+
+	Question 33)WAQ to display all the records of employee excludig HR who is working in deptno 30
+
+	 Query) select * from emp where not (deptno=30 and desgination='hr');
+
+	question 34)WAQ to display all the employe who has hired after january 2015 working as tester in deptno 20 or who were hired before 2015.
+	query)  select * from emp where hirdate>2015-01-01 and desgination='tester' and deptno=20 or hiredate<'2015-01-01';
+
+
+	question 35) WAQ to display all the records of employee who is working in deptno 10 or 20or 30 
+	query )select * from emp where deptno=10 or deptno=20 or deptno=30;
+
+	question 36)WAQ to display all the records of employe who is working in deptno 40 and 50.
+	query )select * from emp where deptno=10 or deptno=40 or deptno=50;
+
+special opertors:-
+------------------
+
+		IN operator:-
+		--------------
+
+		SYNTAX;-
+
+		SELECT * FROM EMP WHERE COLUMN_NAME IN(VALUE1,VALUE2,VALE3-----VALUEN);
+
+		question 37)WAQ to dsiplay all the records who are working in deptno in 10 20 40 60 70
+		query )select * from emp where deptno in(10,20,40,60,70);
+
+		deeptno in(10,20,40,60,70);
+		10 in(10,20,40,60,70); true
+		20 in(10,20,40,60,70); true
+		40 in(10,20,40,60,70); false
+		60 in(10,20,40,60,70); false
+		70 in(10,20,40,60,70); false
+
+		question 38)WAQ to display all the records of an employe who is working as salesman or manager or admin;
+		query)select * from emp where desgination in('salesman','manager','admin'); 
+
+
+	NOT IN operator:-
+	------------------------
+
+		SYNTAX;-
+
+		SELECT * FROM TABLE_NAME WHERE COLUMN_NAME NOT IN(VALUE1,VALUE2,VALE3-----VALUEN);
+
+		question 39)WAQ to display all the records of employee who are working in deptno 50 40 30 excluding salesman HR
+		query) select * from emp where deptno in(30,40,50) and desgination not in('salesman','hr');
+
+
+	
+	BETWEEN:-
+	-----------
+		Syntax:-
+			SELECT * FROM TABLE_NAME WHERE COLUMN_NAME BETWEEN VALUE1 AND VALUE2;
+		
+		question 40)WAQ to display all the records of an employee whose salary range within 20000 to 40000;
+		query)select * from emp where salary>20000 and salary <40000;
+
+
+		 question 41)WAQ To display WHO HIRED during 2014 
+		query)select * from emp where hiredate between '2014-01-01' and '2014-12-31';
+
+		
+		question 42)WAQ to display employe name  salary of the employe who are working in deptno 10 20 and thire anual salary betwwen 40000 to 50000;
+		
+		select ename salary from emp where deptno in(10,20) and salary*12 between 40000 and 50000;
+
+
+
+	NOT BETWEEN:-
+	-----------
+		Syntax:-
+			SELECT * FROM TABLE_NAME WHERE COLUMN_NAME NOT BETWEEN VALUE1 AND VALUE2;
+		
+		question 43)WAQ to display all the records of an employee excluding those who are hired in 2017
+		query)select * from emp where deptno not between '2017-01-01' and '2017-12-31';
+	
+	IS:-
+	-----
+	SYNTAX:-
+		SELECT * FROM TABLE_NAME WHERE COLUMN_NAME IS NULL;
+
+		question 44)WAQ to display who does not have any deptno 
+		query)select * from emp where deptno is null;
+
+	IS NOT:-
+	--------
+	
+	SYNTAX:-
+		SELECT * FROM TABLE_NAME WHERE COLUMN_NAME IS NOT NULL;
+
+
+=========================================================================
+11-05-2020
+
+	LIKE:-
+	----------
+	
+	syntax:- SELECT * FROM TABLE_NAME WHERE COLUMN_NAME LIKE'%/_';
+
+	questin 45) WAQ to display all the records of an employ whos nme starts with R.
+
+	query) select * from emp where ename like'R%';
+
+	questin 46) WAQ to display all the records of an employ whos nme having only three charecters.
+	Query) select * from emp where ename like'___';
+
+
+	question 47) WAQ to display all the records of an employe in thire name who has atleast 2 ll there .
+
+	Query):- select * from emp where ename like'%l%l%';
+
+	Question 48) WAQ to display all the records of an employe whose name starts with S end with P.
+	
+	Query) select * from emp where ename like's%p';
+	
+	Question 49) WAQ to display all the records of an employe whose name length 5 and name should be start with s and l should be second last charecter.
+
+	Query) Selecet * from emp where ename like 'S__l_';
+
+	Question 50) WAQ to display all the records of an employe if the employe name begins with s or a 
+
+	Query:- select * from emp where ename like's%' or ename like 'a%';
+ 
+	question 51) WAQ to display all the records of an employe excluding employees name begines with  Z and p 
+	
+	select * from emp where ename not like 'z%' and ename not like 'p%';
+
+=========================================================================================================
+
+13-05-2020
+
+	Function:- it is block of code which is used to for specific task.
+	----------
+
+		two types:
+
+		1) Scalar function(single row function):-
+
+			when ever we pass n of inputs we will get n no of outputs. this is known as single row or Scanner function.
+			
+		2) aggregate function(multi row function):- 
+			
+			we can give n no of inputs but the output can be  one output this is known as Agregate Function or multirow function
+
+
+
+		Aggregate  inbuilt function:-
+		----------------------------
+
+				1)AVG()-return Avg value
+				
+				Syntax:-select avg(column_name) from emp;
+				
+				Example:-select avg(salary) from emp;
+				
+
+
+
+
+
+				2)Count():-it counts the no of rows
+
+				Syntax:- SELECT COUNT(*) FROM EMP;
+
+
+				52)WAQ to display no of rows in employee table.
+				Example:-select count(*) noofcounts from emp;
+ 					
+
+
+
+				3)MAX():-returns max value of selected column
+
+				syntax:-select max(column_name) from emp;
+
+
+				53) WAQ to display maximun slaary.
+				example:-select max(salary) from emp;
+					
+
+			
+				4)MIN():- returns min value of the selected column
+				
+				syntax:-select min(column_name) from emp;
+
+
+
+				54)WAQ to dsipaly minimum salary
+				example:- select min(salary) from emp;
+				
+
+
+
+				5)SUM():-returns sum of ALL THE VALUES OF SELECET 
+ 				
+				syntax:-select sum(column_name) from emp;
+
+
+				55)Waq to dispaly sum of salary.
+				Example:-select sum(salary) from emp;
+  
+
+
+		
+		56)WAQ to display average,max,min,sum of slaries and count the no of records.
+		 select avg(salary) avgslary, count(*) noofcounts, max(salary) maxsalary, min(salary) minsalary, sum(salary) sumsofalary from emp;	
+		
+
+	
+
+==========================================================================================================================================================
+
+	14-05-2020
+	-----------
+
+	OrdereBy clause:- 
+
+
+	question 57)WAQTD all the records of an employe according o slaray shold be in descending order
+	query)select * from emp order by salary desc;
+
+	question58)WAQ to display name of the employe and slary annula slary and sort the desc of the records of thire annual slaray.
+	query )select ename ,salary,salary*12 annualsalary from emp order by annualsalary desc;	
+
+
+	question59)WAQ to display name desgination of all the employe who are working in either of department 10 20 40 and sort the records in asc by thire salary.	 
+	query)select ename ,desgination from emp  where deptno in(10,20,40) order by salary asc;
+
+					or
+
+	query)select ename ,desgination from emp  where deptno in(10,20,40) order by salary;
+	
+
+
+			
+
+	Group By clause:-
+	------------------
+
+		
+		Syntax:- SELECT * FROM TABLE_NAME WHERE CONDITION GROU BY COLUMN_NAME;
+		
+	
+		question 60)WAQTD no of counts of the employe working in each dept.
+		query)select ,count(*)from emp group by count(*);
+
+
+		order of exceution:-
+		-----------------
+		
+		question 61)WAQTD the highest salary of an employ in which dept
+		query)select max(salary) from emp group by deptno;
+				
+
+		question 62)watd no of software tester working in each deptno 
+		query)select count(*) from emp where desgination='software tester' group by deptno;
+
+
+
+	Having Clause;-
+	---------------	
+
+		syntax:-select * from table where condition group by column_name having(group_filter_columnnam)
+
+
+		question 63)WAQ to display  deptno which have atleast two clerks working
+		query)select deptno from emp  where desgination='clerk' group by deptno having count(*)>=2;
+
+
+
+
+		Question 64)WAQ to display department no which has total salary greater than 10000 in each department.
+		Query) select deptno from emp group by deptno having sum(salary)>10000;
+
+		
+
+		WAQD department no which has alteast two employee hired into it on the same date
+
+		select deptno from emp group by deptno having hiredate
+
+
+
+		WAQTD  departno and avg salary of all the departments whose avg salary is greter than 15000 by excluding the employee whhose name begines with R.	
+
+		 select deptno ,avg(salary) from emp where ename not like 'r%' group by deptno having avg(salary)>15000;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

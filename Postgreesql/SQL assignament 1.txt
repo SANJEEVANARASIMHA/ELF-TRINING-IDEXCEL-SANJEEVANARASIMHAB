@@ -1,0 +1,214 @@
+
+									SQL_ASSIGNMENT-1
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+1) LIST ALL THE EMPLOYEES WHOSE SALARY IS NULL 
+Query)select * from emp where salary is null;
+
+
+2) LIST ALL THE EMPLOYEES WHO DON’T HAVE A DEPT NO
+Query)select * from emp where deptno is null;
+
+
+3) LIST ALL THE SALESMEN IN DEPT 30
+Query)select * from emp where desgination='salesman' and deptno=30;
+
+
+
+4) LIST ALL THE SALESMEN IN DEPT NUMBER 30 AND HAVING SALARY GREATER THAN 1500
+Query)select * from emp where desgination='salesman' and deptno=30 and salary>1500;
+
+
+5) LIST ALL THE EMPLOYEES WHOSE NAME STARTS WITH ‘S’ OR ‘A’
+Query)select * from emp where ename like 's%' or ename like 'a%';
+
+
+
+6) LIST ALL THE EMPLOYEES EXCEPT THOSE WHO ARE WORKING IN DEPT 10 & 20. 
+Query)select * from emp where deptno not in(10,20);
+
+
+
+7) LIST THE EMPLOYEES WHOSE NAME DOES NOT START WITH ‘S’
+Query)select * from emp where ename not like 's%';
+
+
+
+8) LIST ALL THE EMPLOYEES WHO ARE HAVING REPORTING MANAGERS IN DEPT 10
+Query)select * from emp where desgination='reporting manager' and deptno=10;
+
+
+9) LIST ALL THE EMPLOYEES WHOSE SALARY IS NULL AND WORKING AS CLERK
+Query)select * from emp where salary is null and desgination='clerk';
+
+
+
+10) LIST ALL THE EMPLOYEES WHO DON’T HAVE A REPORTING MANAGER IN DEPTNO 10 OR 30
+Query)select * from emp where desgination<>'reporting manager' and deptno in(10,20);
+
+
+11) LIST ALL THE SALESMEN IN DEPT 30 WITH SAL MORE THAN 2450
+Query)select * from emp where desgination='salesman' and salary>2450;
+
+
+
+12) LIST ALL THE ANALYST IN DEPT NUMBER 20 AND HAVING SALARY GREATER THAN 2500
+Query)select * from emp where desgination='analyst' and deptno=20 and salary >2500;	
+
+
+
+13) LIST ALL THE EMPLOYEES WHOSE NAME STARTS WITH ‘M’ OR ‘J’
+Query)select * from emp where ename like 'm%' or ename like 'j%';
+
+
+
+14) LIST ALL THE EMPLOYEES WITH ANNUAL SALARY EXCEPT THOSE WHO ARE WORKING IN DEPT 30 
+Query)select *,salary*12 anualsalary from emp where deptno<>30;
+
+
+
+15) LIST THE EMPLOYEES WHOSE NAME DOES NOT END WITH ‘ES’ OR ‘R’
+	select * from emp where ename not like '%es' or ename not like'%r';
+
+
+16) LIST ALL THE EMPLOYEES WHO ARE HAVING REPORTING MANAGERS IN DEPT 10 ALONG WITH 10% HIKE IN SALARY
+	select *,salary+(salary*10)/100 hikesalary from emp where desgination='reporting manager' and deptno=10;
+
+
+
+17) DISPLAY ALL THE EMPLOYEE WHO ARE ‘SALESMAN’S HAVING ‘E’ AS THE LAST BUT ONE CHARACTER  IN ENAME BUT SALARY HAVING EXACTLY 4 CHARACTER
+Query) select * from emp where desgination='salesman' and ename like'%e_' and cast(salary as varchar) like '____';
+
+
+
+18) DISPLAY ALL THE EMPLOYEE WHO ARE JOINED AFTER YEAR 81
+Query)select * from emp where hiredate>'1981-01-01';
+
+
+
+19) DISPLAY ALL THE EMPLOYEE WHO ARE JOINED IN FEB
+Query)select * from emp where cast(hiredate as varchar) like'____-02-__';
+
+
+
+20) LIST THE EMPLOYEES WHO ARE NOT WORKING AS MANAGERS AND CLERKS IN DEPT 10 AND 20 WITH A SALARY IN THE RANGE OF 1000 TO 3000
+Query)select * from emp where desgination not in('managers','clerks') and deptno in(10,20) and salary between 1000 and 3000;
+
+
+
+21) LIST THE EMPLOYEES WHOSE SALARY NOT IN THE RANGE OF 1000 TO 2000 AND WORKING IN DEPT 10,20 OR 30 EXCEPT ALL SALESMEN
+Query)select * from emp where salary not between 1000 and 2000 and deptno in(10,20,30) and desgination='salesman';
+
+
+
+22) LIST THE DEPARTMENT NAMES WHICH ARE HAVING LETTER ‘O’ IN THEIR LOCATIONS AS WELL AS THEIR DEPARTMENT NAMES
+Query)select dname from dept where dloc like '%O%' and dname like'%o%';
+
+
+
+23) DISPLAY ALL THE EMPLOYEES WHOSE JOB HAS STRING ‘MAN’ IN IT.
+Query)select * from emp where desgination like'%man%';
+
+
+24)LIST THE EMPLOYEES WHO ARE HIRED AFTER 82 AND BEFORE 87.
+Query)select * from emp where hiredate between '1982-01-01' and '1987-01-01';
+
+
+
+25)WAQTD ALL THE DETAILS OF EMPLOYEES HIRED IN NOVEMBER AND DECEMBER.
+Query)select * from emp where cast(hiredate as varchar) like'____-12-__' and  cast(hiredate as varchar) like'____-11-__';
+
+
+
+
+26)LIST ALL THE EMPLOYEE NAMES AND COMISSION FOR THOSE EMPLOYEES WHO EARN COMISSION MORE THAN THEIR SALARY
+Query)select ename,commission from emp where commission>salary;
+
+
+
+
+27)WAQTD NAME AND DESIGNATION FOR ALL THE EMPLOYEES HAVING REPORTING MANAGERS AND ALSO THRIE NAMES STARTING WITH ‘S’
+Query)select ename,desgination from emp where desgination='resporting manager' and ename like's%';
+
+
+
+28)WAQTD NAME AND SALARY OF ALL THE EMPLOYEES IF THEIR ANNUAL SALARY ENDS WITH ‘0’ .
+Query)select ename ,salary ,salary*12 annualsalary from emp where cast(salary*12 as varchar) like '%0';
+
+
+
+29)WAQTD NAME OF THE EMPLOYEE HAVING ATLEAST 2L’s IN HIS NAME .
+Query) select * from emp where ename like'%l%l%';
+
+
+
+30)WAQTD NAME OF THE EMPLOYEES WHOS NAME STARTS WITH A ‘VOWEL’
+Query)select * from emp where ename like 'a%' or ename like'e%'or ename like'i%'or ename like'o%' or ename like'u%';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17
+19
+25
+28
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,157 @@
+
+								Group BY AND Having by clause
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1)	WRITE A QUERY TO DISPLAY TOTAL SALARY NEEDED TO PAY EACH JOB IN EMPLOYEE TABLE.
+Query)	select desgination,sum(salary) from emp group by desgination;
+
+
+2)	WRITE A QUERY TO DISPLAY THE HIRE DATE ON WHICH AT LEAST 3 EMPLOYEES WHERE HIRED.
+Query)	select hiredate ,count(hiredate) from emp  group by hiredate having count(hiredate)>=3;
+
+
+
+3.)	WRITE A QUERY TO DISPLAY THE DEPARTMENT NUMBER WHICH HAS MORE THAN 2 EMPLOYEES AND THE TOTAL AMOUNT REQUIRED 
+	TO PAY THE MONTHLY SALARIES OF ALL THE EMPLOYEES IN THAT DEPARTMENT SHOULD BE MORE THAN 9000.
+Query) select deptno from emp group by deptno having count(deptno)>2 and sum(salary)>9000;
+
+
+
+4.)	WRITE A QUERY TO DISPLAY NUMBER OF EMPLOYEES WORKING IN EACH DEPARTMENT AND
+	 ITS’ AVERAGE SALARY BY EXCLUDING ALL THE EMPLOYEES WHOSE SALARY IS LESS THAN THEIR COMMISSION.
+
+Query)	select deptno,count(ename),avg(salary) from emp where salary< comm group by deptno;
+
+
+
+5.)	WRITE A QUERY TO DISPLAY THE SALARIES WHICH HAS REPETITIONS IN THE SAL COLUMN OF EMPLOYEE TABLE.
+Query)	select salary ,count(salary)from emp group by salary having count(salary)>1;
+
+
+
+6.)	WRITE A QUERY TO DISPLAY THE EMPLOYEE NAME ONLY IF MORE THAN ONE PERSON IN THE EMPLOYEES OF THE COMPANY HAS SAME NAME.
+Query)	select ename, count(ename) from emp group by ename having count(ename)>1;
+
+
+
+7.)	WRITE A QUERY TO DISPLAY THE DEPARTMENT NUMBER WHOSE AVERAGE SALARY IS BETWEEN 25000 AND 30000.
+Query)	select deptno from emp group by deptno having avg(salary) between 25000 and 30000;
+
+
+
+
+8.)	WRITE A QUERY TO DISPLAY THE NUMBER OF EMPLOYEES ONLY IF THEY ARE WORKING AS MANAGER OR ANALYST AND
+	 THEIR ANNUAL SAL SHOULD END WITH A ZERO, IN EACH DEPARTMENT.
+
+Query)	select count(*) from emp where desgination in('Manager','Analyst') and cast(salary*12 as varchar) like '%0' and deptno in(10,20,30,40);
+
+
+
+
+
+9.)	WRITE A QUERY TO DISPLAY NO OF CLERKS WORKING IN EACH DEPARTMENT.
+Query)	select desgination,count(desgination) from emp where desgination='clerk' group by desgination having count(desgination)>1;
+
+
+
+
+10.) WRITE A QUERY TO DISPLAY HIGHEST SALARY GIVEN TO A MANAGER  IN EACH DEPARTMENT.
+Query) select deptno,max(salary) from emp where desgination='Manager' group by deptno having deptno in(10,20,30,40);
+
+
+
+11.) WRITE A QUERY TO DISPLAY NO OF TIMES THE SALARIES HAVE REPEATED IN THE EMP TABLE.
+Query)select count(salary)from emp group by salary having count(salary)>1;
+
+
+
+12).WRITE A QUERY TO DISPLAY DEPTNO AND MUNBER OF EMPLOYEES WHORKING IN EACH DEPARTMENT EXCEPT FOR THOSE WORKING IN DEPT 10
+Query)select deptno,count(*) from emp where deptno not in(10) group by deptno;
+
+
+
+13.)WAQTD NUMBER OF EMPLOYEES GETTING COMISSION IN EACH DEPARTMENT
+
+Query)select count(*) from emp where comm is not null and deptno in(10,20,30) group by deptno;
+
+
+
+
+14.)WAQTD NUMBER OF EMPLOYEES GETTING SALARY MORE THAN 1600 EXCLUDING ALL THE MANAGERS IN EACH DEPARTEMNT 
+Query)select count(*) from emp where salary>1600 and desgination not in('Manager') and deptno in(10,20,30,40) group by deptno;
+
+
+
+
+15.)WAQTD AVERAGE SALARY NEEDED TO PAY ALL THE EMPLOYEES WHO ARE HAVING A REPORTING MANAGER IN EACH JOB .
+Query)select desgination,avg(salary) from emp where MGR is not null group by desgination;
+
+
+
+16.)WAQTD NUMBER OF EMPLOYEES HIRED INTO THE SAME DEPARTMENT ON THE SAME DAY
+Query)select hiredate,deptno,count(*) from emp group by hiredate, deptno having count(hiredate)>=2 and count(deptno)>=2;
+ 
+
+
+17.)WAQTD NUMBER OF EMPLOYEES GETTING THE SAME SALARY , WORKING IN THE SAME DEPARTMENT 
+Query)select salary,deptno,count(*) from emp group by salary,deptno having count(salary)>=2 and count(deptno)>=2;
+
+
+
+
+18.)WAQTD MAXIMUM SALARY GIVEN IN EACH DESIGNATION EXCLUDING THOSE WHOS NAME STARTS WITH ‘K’
+Query)select desgination,max(salary) from emp where ename not like 'k%' group by desgination; 
+
+
+
+19.)WAQTD NUMBER OF EMPLOYEES REPORTING TO 7839 IN EACH DEPT
+Query)select deptno,count(*) from emp where MGR=7839 group by deptno;
+
+
+
+20)WAQTD NUMBER OF EMPLOYEE NAMES STARTING WITH AN VOWEL IN EACH DEPARTMENT 
+Query) select count(*) from emp where ename like 'a%' or ename like 'e%' or ename like 'i%' or ename like 'o%' or ename like 'u%' group by deptno;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

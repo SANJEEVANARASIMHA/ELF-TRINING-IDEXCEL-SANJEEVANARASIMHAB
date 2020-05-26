@@ -598,26 +598,69 @@ special opertors:-
 
 		
 
-		WAQD department no which has alteast two employee hired into it on the same date
+		Question 65)WAQD department no which has alteast two employee hired into it on the same date
 
-		select deptno from emp group by deptno having hiredate
-
-
-
-		WAQTD  departno and avg salary of all the departments whose avg salary is greter than 15000 by excluding the employee whhose name begines with R.	
-
-		 select deptno ,avg(salary) from emp where ename not like 'r%' group by deptno having avg(salary)>15000;
+		query)select deptno from emp group by deptno having hiredate
 
 
 
+		question 66)WAQTD  departno and avg salary of all the departments whose avg salary is greter than 15000 by excluding the employee whhose name begines with R.	
+		 query)select deptno ,avg(salary) from emp where ename not like 'r%' group by deptno having avg(salary)>15000;
 
 
 
+==================================================================================================================================================
+
+SUBQueries:- 
+
+		Syntax:- select * from table_name where column_name operator(select * from table_name condition);
+				(outer Query)						inner query
+
+	1) single row subquery;- 
+  
+			Syntax:- select colum1,column2... From table where column1 comparision / relational operator (select column1 from table_name where column=value);				
+				
+	2) multi row subquery:-
+		
+		syntax:-select column1, column 2..... from table_name where column1 operator (select column1 from table  where exper1=value);
+
+
+=================================================================================================================================================
+20-05-2020
+
+	Examples :-
+	-----------
+	Question 67)WAQTD name of all employe who are hired after rahul 
+	Query)select ename from emp where hiredate>(select hiredate from emp where ename='rahul');
 
 
 
+	Question 68) WAQTD name of all the employes who is working for research department
+	Query)	select ename from emp where deptno=(select deptno from dept_info where dname='research');
+	
 
 
+	question 69)WAQTD  name of employe who is working in location which has atleast one a.
+	Query)select ename from emp where deptno in(select deptno from dept_info  where location like'%a%');
+
+
+	question 70) WAQTD 2nd max salary
+	Query) select max(salary) from emp where salary<(select max(salary) from emp);
+
+
+	question 71)WAQTD dname which has atleast two clerks
+	Query)select dname from dept_info where deptno in(select deptno from emp where desgination='clerk' group by deptno having count(*)>=2);
+
+
+	question 72)WAQTD third max sal
+	query)select max(salary) from emp where salary<(select max(salary) from emp where salary<(select max(salary) from emp));
+
+
+	question 73)WAQTD name of emp who are joined before shaik shaherr and salary < robin son
+	query)select * from emp where hiredate<(select hiredate from emp where ename='sahik shaheer') and salary <(select salary from emp where ename='robin son');
+
+
+=======================================================================================================================================================
 
 
 

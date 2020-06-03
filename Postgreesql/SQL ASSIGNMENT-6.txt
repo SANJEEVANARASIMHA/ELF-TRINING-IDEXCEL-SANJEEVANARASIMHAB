@@ -1,0 +1,117 @@
+
+									ASSIGNMENT_6
+=======================================================================================================================================================================
+
+
+
+
+1.	LIST ENAME, JOB, ANNUAL SAL, DEPTNO, DNAME WHO EARN 30000 PER YEAR AND WHO ARE NOT CLERKS
+Query) 	select e.ename,e.desgination,e.salary,e.deptno,d.dname from emp e inner join dept_info d on e.deptno=d.deptno where e.salary*12>30000 and e.desgination not in('clerk');
+
+
+2.	 LIST OUT THE ALL EMPLOYEES BY NAME AND EMPLOYEE NUMBER ALONG WITH THEIR MANAGER'S NAME AND EMPLOYEE NUMBER 
+Query)	SELECT e.ename, e.empid,m.ename AS manager_name,m.empid FROM   emp e self join emp m on e.MGR = m.emp_id;
+
+
+3.	DISPLAY ENAME,DNAME EVEN IF THERE NO EMPLOYEES WORKING IN A PARTICULAR DEPARTMENT.
+Query)	select e.ename,d.dname from emp e full outer join dept_info d on e.deptno=d.deptno;
+
+
+4.	DISPLAY THE DEPARTMENT NAME ALONG WITH TOTAL SALARY IN EACH DEPARTMENT 
+Query)	select d.dname,sum(salary) from dept_info d inner join emp e on d.deptno=d.deptno group by d.dname;
+
+
+
+5.	DISPLAY EMPLOYEE NAME AND DEPARTMENT NAME FOR EACH EMPLOYEE
+Query)	select e.ename ,d.dname from emp e inner join dept_info d on e.deptno=d.deptno;
+
+
+6.	DISPLAY LOCATION NAME OF THE EMPLOYEE WHO EARN COMMISSION.
+Query)	select d.location from dept_info d inner join emp e on d.deptno=e.deptno where e.comm is not null;
+
+
+7.	DISPLAY DEPT NAME OF THE EMPLOYEE WHO EARN MIN SALARY AND HAVE NO REPORTING MANAGER.
+Query)	select d.dname from d.dept_info inner join emp e on d.deptno=e.deptno where e.salary is not null and e.MGR is null;
+
+
+8.	DISPLAY DEPT NAME,LOC OF ALL THE EMPLOYEES WHO ARE REPORTING TO SMITH.
+Query)	select d.dname,d.dlocation from dept_info d inner join emp e on d.deptno=e.deptno where e.MGR=(select emp_id from emp where ename='SMITH');
+
+
+9.	LIST ALL THE DEPT NAME AND LOCATION OF ALL THE SALESMAN MANAGER'S MANAGER.
+Query)	select d.dname,d.location from dept_info d inner join emp e on d.deptno=e.deptno where e.emp_id in(select MGR  from emp where empid in(select Mgr from emp where desgination='salesman'));
+
+
+
+10.	LIST EMPLOYEES WHO ARE WORKING IN RESEARCH DEPT AND THEY ARE MANAGER.
+Query)	select * from emp e inner join dept_info d on e.deptno=d.deptno where d.dname='research' and e.emp_id in(select empid from emp where MGR in(select MGR from emp));
+
+
+11.	DISPLAY THE NUMBER OF EMPLOYEES WHO ARE GETTING SALARY LESS THAN THE BLAKE'S MANAGER.
+Query)	select count(*) from emp e  join emp d on e.empid=d.MGR where e.salary<(select salary from emp where empid=(select MGR from emp where ename='BLAKE'));
+
+
+12.	LIST THE EMPLOYEE DEPTNAME AND LOCATION OF ALL THE EMPLOYEES WHO ARE ANALYST,REPORTING TO BLAKE.
+Query)	select d.dname,d.location from dept_info d inner join emp e on d.deptno=e.deptno where e.dsgination='ANALYST' and MGR in(select empid from emp where ename='BLAKE');
+
+
+13.	DISPLAY THE EMPLOYEE NAMES,HIREDATE,COMM OF FORD'S MANAGER
+Query)	select e.ename,e.hiredate,e.comm from emp e inner join emp d on e.empid=d.emp_id where e.salary<(select salary from emp where empid=(select MGR from emp where ename='BLAKE'));
+
+
+14.	DISPLAY ENAME, DNAME OF ALL THE EMPLOYEES WHOSE SALARY LESS THAN AVG SAL OF DEPT 30
+Query)	select e.ename,d.dname from emp e inner join dept_info d on e.deptno=d.deptno where e.salary<(select avg(salary) from emp where deptno=30);
+
+
+15.	DISPLAY ENAME DNAME AND LOC OF ALL THE EMPLOYEES WHO ARE WORKING FOR JONES;
+Query)	select e.ename,d.dname,d.location from emp e inner join dept_info d on d.deptno=e.deptno where MGR=(select empid from emp where ename='JONES');
+
+
+16.	DISPLAY ENAME DNAME OF ALL THE EMPLOYEES WHOSE NAME STARTS WITH S
+Query)	select e.ename,d.dname from emp e inner join dept_info d on e.deptno=d.deptno where e.ename like 'S%';
+
+
+17.	LIST THE DNAME WHO ARE NOT HAVING ANY EMPLOYEE IN IT
+Query)	select d.dname from emp e right join dept_info d on e.deptno=d.deptno where e.ename is null;
+
+
+18.	DISPLAY EMPLOYEE WHO ARE GETTING SAME COMMISSION
+Query)	select * from emp e self join emp d on e.empid=m.empid where e.comm is not null;
+
+
+19.	DISPLAY ALL THE DEPT NAMES IRRESPECTIVE OF ANY EMPLOYEE WORKING IN IT OR NOT. IF AN EMPLOYEE IS WORKING DISPLAY HIS NAME.
+Query)	select d.dname,e.ename from emp e full outer join dept_info d on e.deptno=d.deptno;
+
+
+20.	WRITE A QUERY TO DISPLAY EMPLOYEE NAME, JOB, DNAME, LOCATION OF ALL EMPLOYEES WHO ARE WORKING AS ACTUAL MANAGERS AND WORKS AT CHICAGO.
+Query)	select e.ename e.desgination,d.dname,d.location from emp e inner join dept_info d on e.deptno=d.deptno where empid in(select MGR from emp) and d.location='CHICAGO);
+
+
+21.	LIST THE DEPARTMENT NAMES IN WHICH THE EMPLOYEES ARE HIRED BETWEEN 1ST OF JAN 1981 AND 31ST DEC 1982 WITH SALARY MORE THAN 1800.
+Query)	select d.dname from emp e right join dept_info d on e.deptno=d.deptno where e.hiredate between '1981-01-01' and '1982-12-31' and e.salary>1800;
+
+
+
+22.	DISPLAY 2ND LEAST SALARY FROM EMPLOYEE TABLE.
+Query)	select min(e.salary) from emp e self join emp m on e.empid=m.empid where e.salary<(select minn(salary) from emp);
+
+
+
+23.	LIST THE EMPLOYEES WHOSE ANNUAL SALARY IS GREATER THAN 1500 AND WHO ARE JOINED BEFORE 1982 ONLY.
+Query)	select * from emp e join emp m on e.empid=m.empid where e.salary*12>1500 and e.hiredate<'1982-01-01';
+
+
+
+24.	DISPLAY DNAME, LOC, DEPTNO OF EMPLOYEES WHO HAS SAME REPORTING MANAGER
+Query)	select d.dname ,d.location,e.deptno from emp e inner join dept_info on e.deptno=d.deptno where e.MGR in (select MGR from emp);
+
+25.	DISPLAY EMPLOYEE NAME ALONG WITH THEIR MANAGER NAME.
+Query)	select e.ename,m.ename AS manager_name from emp e  join emp m on e.MGR = m.emp_id;
+
+26.	DISPLAY EMPLOYEE NAME AND HIS DEPT NAME FOR THE EMPLOYEES WHOSE NAME STARTS WITH ‘S’.
+Query)	select e.ename,d.dname from emp e inner join dept_info d on d.deptno=e.deptno where e.ename like's%';
+
+
+27.	DISPLAY EMPLOYEES WHO ARE GETTING SAME SALARY.
+Query)	select * from emp e join emp d on e.empid=d.empid where e.salary in(select salary from emp group by salary having count(*)>1);
+

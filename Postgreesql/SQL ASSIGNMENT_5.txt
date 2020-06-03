@@ -1,0 +1,70 @@
+							Difference Between TRUNCATE, DELETE And DROP In SQL
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+1)TRUNCATE
+-----------
+ 
+	TRUNCATE SQL query removes all rows from a table, without logging the individual row deletions. TRUNCATE is faster than the DELETE query.
+ 
+	syntax;-TRUNCATE TABLE TABLE_NAME;  
+ 
+	1)TRUNCATE is a DDL command
+
+	2)TRUNCATE is executed using a table lock and the whole table is locked to remove all records.
+
+	3)We cannot use the WHERE clause with TRUNCATE.
+	
+	4)TRUNCATE removes all rows from a table.
+
+	5)Truncate uses less transaction space than the Delete statement.
+
+	6)Truncate cannot be used with indexed views.
+
+	7)TRUNCATE is faster than DELETE.
+
+
+2)DELETE
+---------
+ 
+SQL DELETE query deletes all records from a database table. To execute a DELETE query, delete permissions are required on the target table. If you need to use a WHERE clause in a DELETE, select permissions are required as well.
+ 
+
+	SYNTAX:-DELETE FROM TABLE_NAME WHERE CONDITION;  
+
+ 
+	1)DELETE is a DML command.
+
+	2)DELETE is executed using a row lock, each row in the table is locked for deletion.
+
+	3)We can use where clause with DELETE to filter & delete specific records.
+
+	4)The DELETE command is used to remove rows from a table based on WHERE condition.
+
+	5)Identity of column keep DELETE retains the identity.
+
+	6)To use Delete you need DELETE permission on the table.
+
+	7)Delete uses more transaction space than the Truncate statement.
+
+	8)The delete can be used with indexed views.
+
+
+3)DROP
+-------
+
+	SYNTAX:-DROP TABLE TABLE_NAME ;  
+
+	1)The DROP command removes a table from the database.
+
+	2)All the tables' rows, indexes, and privileges will also be removed.
+
+	3)DROP and TRUNCATE are DDL commands, whereas DELETE is a DML command.
+
+	4)DELETE operations can be rolled back (undone), while DROP and TRUNCATE operations cannot be rolled back
+
+
+
+
+

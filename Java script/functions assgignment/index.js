@@ -38,7 +38,7 @@ console.log(prioftringle(10));
 
 
 
-
+// by using  Named function area of a parllelogram //
  function areaofparllelogram(b,h) {
      var area=b*h;
      return area;

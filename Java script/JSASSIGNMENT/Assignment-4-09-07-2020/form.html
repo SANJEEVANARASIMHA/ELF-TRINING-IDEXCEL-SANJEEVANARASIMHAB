@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+   
+    <div class="row">
+        <div class="col-6 pl-5">
+            <h1>Phones</h1>
+        <ul id="demo" onclick="removeFirst()"> 
+            <li onclick="removeClick(this)">Vivo iQOO3</li>
+            <li onclick="removeClick(this)">OnePlus71 Pro</li>
+        </ul>
+        
+            <input type="text" id="inputText">
+            <input type="submit" onclick="addPhones()" value="addphone">
+            <button onclick="removePhones()">removePhone</button> 
+        </div>
+        
+    
+       <div class="col-6 pr-5">
+        <h1>Simcars</h1>
+        <ul id="demo1" onclick="removeLast()" >
+            <li>Airtel</li>
+            <li>Jio</li>
+        </ul>
+        
+            <input type="text" id="inputText1" >
+            <input type="submit" onclick="addSims()" value="addSims">
+            <button onclick="removeSims()">removeSims</button> 
+       </div>
+       
+
+    </div>
+<script src="/form.js"></script>
+<script src="/js/jquery-3.5.0.js"></script>
+<script src="/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

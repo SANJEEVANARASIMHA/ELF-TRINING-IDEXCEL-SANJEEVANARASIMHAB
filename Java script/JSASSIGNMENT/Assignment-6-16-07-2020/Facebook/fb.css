@@ -1,0 +1,37 @@
+.row1{
+    
+    height: 125px;
+    background-color: rgb(10, 80, 150);
+}
+
+.input1{
+    height: 20px;
+    width: 130px;
+    outline: none;
+    border:  rgb(10, 66, 122); 1px;
+}
+.login{
+    background-color: rgb(11, 92, 173);
+    outline: none;
+    color:white;
+    border: black 2px;
+    width: 75px;
+    height: 25px;
+}
+.row2{
+    background-color: rgb(203, 209, 219);
+    height: 650px;
+}
+.login:hover{
+    background-color:  rgb(10, 66, 122);
+}
+
+input[type=text]{
+    outline: none;
+}
+a:hover{
+    color: white;
+}
+.submittwo{
+    width: 175px;
+}

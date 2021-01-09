@@ -83,7 +83,7 @@ Query) select ename, lower(substr(ename,1,3))||upper(substr(ename,4)) from emp;
 14. Display the result from emp table as below.
 SMITH is a CLERK and gets salary 2000 
 
-Query)select ename ||'is a'|| desgination || 'and gets salary'|| salary from emp;
+Query)select ename ||'is a '|| desgination || ' and gets salary '|| salary from emp;
 				or
 Query)select concat(ename,concat(' is a ',concat(desgination),concat(' and salary',salary))) from emp;
 

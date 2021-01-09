@@ -140,7 +140,7 @@ Query)select ename ,salary ,salary*12 annualsalary from emp where cast(salary*12
 
 
 
-29)WAQTD NAME OF THE EMPLOYEE HAVING ATLEAST 2L’s IN HIS NAME .
+29)WAQTD NAME OF THE EMPLOYEE HAVING ATLEAST 2L’s IN HIS NAME
 Query) select * from emp where ename like'%l%l%';
 
 
